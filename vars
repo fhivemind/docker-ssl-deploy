@@ -1,4 +1,5 @@
 #!/bin/bash
+export PROJECT_ID="red_project"             # Unique project ID
 export APP_IMAGE="crccheck/hello-world"     # Image of your app
 export APP_HOST="example.com"               # Host of the app
 export APP_PORT="8000"                      # Exposed port of the app
