@@ -1,0 +1,9 @@
+#!/bin/bash
+export APP_IMAGE="google/nodejs-hello"      # Image of your app
+export APP_HOST="example.com"               # Host of the app
+export APP_PORT="8080"                      # Exposed port of the app
+
+domains=(example.com www.example.com)       # Domains for SSL Certification
+email=""                                    # Email to register certs to
+staging=0                                   # Put to 1 in case of testing
+localhost="localhost"                       # for Dummy certs
