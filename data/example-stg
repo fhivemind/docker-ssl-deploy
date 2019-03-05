@@ -1,0 +1,8 @@
+#!/bin/bash
+APP_HOST="staging.env.example.com"
+APP_PORT="3000"
+APP_SERVICE="example-stg-service"
+
+domains=(staging.env.example.com www.staging.env.example.com)
+email="example@mail.com"
+staging=1

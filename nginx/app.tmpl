@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name $APP_HOST;
+    server_name $APP_HOST www.$APP_HOST;
 
     location / {
         return 301 https://$host$request_uri;
@@ -9,11 +9,23 @@ server {
     location /.well-known/acme-challenge/ {
         root /var/www/certbot;
     }
+
+    error_page 404 /custom_404.html;
+    location = /custom_404.html {
+        root /usr/share/nginx/html;
+        internal;
+    }
+
+    error_page 500 502 503 504 /custom_50x.html;
+    location = /custom_50x.html {
+        root /usr/share/nginx/html;
+        internal;
+    }
 }
 
 server {
     listen 443 ssl;
-    server_name $APP_HOST;
+    server_name $APP_HOST www.$APP_HOST;
     
     ssl_certificate /etc/letsencrypt/live/$APP_HOST/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/$APP_HOST/privkey.pem;
@@ -22,6 +34,18 @@ server {
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
     location / {
-        proxy_pass http://app:$APP_PORT;
+        proxy_pass http://$APP_SERVICE:$APP_PORT;
+    }
+
+    error_page 404 /custom_404.html;
+    location = /custom_404.html {
+        root /usr/share/nginx/html;
+        internal;
+    }
+
+    error_page 500 502 503 504 /custom_50x.html;
+    location = /custom_50x.html {
+        root /usr/share/nginx/html;
+        internal;
     }
 }

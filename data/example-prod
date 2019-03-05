@@ -1,0 +1,8 @@
+#!/bin/bash
+APP_HOST="example.com"
+APP_PORT="3000"
+APP_SERVICE="example-service"
+
+domains=(example.com www.example.com)
+email="example@mail.com"
+staging=0
