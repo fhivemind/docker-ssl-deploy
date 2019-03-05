@@ -1,2 +1,2 @@
-certbot/
-app.conf
+/certbot
+*.conf
