@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name $APP_HOST www.$APP_HOST;
+    server_name APP_HOST www.APP_HOST;
 
     location / {
         return 301 https://$host$request_uri;
@@ -25,16 +25,16 @@ server {
 
 server {
     listen 443 ssl;
-    server_name $APP_HOST www.$APP_HOST;
+    server_name APP_HOST www.APP_HOST;
     
-    ssl_certificate /etc/letsencrypt/live/$APP_HOST/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/$APP_HOST/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/APP_HOST/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/APP_HOST/privkey.pem;
 
     include /etc/letsencrypt/options-ssl-nginx.conf;
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
     location / {
-        proxy_pass http://$APP_SERVICE:$APP_PORT;
+        proxy_pass http://APP_SERVICE:APP_PORT;
     }
 
     error_page 404 /custom_404.html;

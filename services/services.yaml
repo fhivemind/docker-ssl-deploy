@@ -1,0 +1,24 @@
+# service 1
+service:
+  port: 2030
+  name: example-service
+  host: example.com
+
+  email: user-mail@mail.com
+  staging: false
+  domains: 
+    - example.com
+    - www.example.com
+
+# service 2
+service:
+  port: 9887
+  name: example-service-2
+  host: secundary-example.com
+  
+  email: user-mail@mail.com
+  staging: false
+  domains: 
+    - secundary-example.com
+    - www.secundary-example.com
+    - www.sub.secundary-example.com
