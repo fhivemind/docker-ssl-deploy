@@ -37,6 +37,11 @@ case $key in
     shift # past argument
     shift # past value
     ;;
+    --path)
+    SERVICE_PATH="$2"
+    shift # past argument
+    shift # past value
+    ;;
     --staging)
     STAGING=1
     shift # past argument
@@ -96,6 +101,7 @@ create_valid_certs() {
   sed -i "s/APP_HOST/$APP_HOST/g" $conf_file
   sed -i "s/APP_PORT/$APP_PORT/g" $conf_file
   sed -i "s/APP_SERVICE/$APP_SERVICE/g" $conf_file
+  sed -i "s|SERVICE_PATH|$SERVICE_PATH|g" $conf_file
 
   # get TLS data
   if [ ! -e "$CERT_PATH/conf/options-ssl-nginx.conf" ] || [ ! -e "$CERT_PATH/conf/ssl-dhparams.pem" ]; then
