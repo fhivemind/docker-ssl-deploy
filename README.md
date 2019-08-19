@@ -5,7 +5,7 @@ Handles docker service deployment and certification.
 ### Description
 
 ![Alt text](diagram.png)
-Exposes docker services using nginx, autoprovisioning the SSL via Let's Encrypt.
+Exposes docker services using nginx, auto provisioning the SSL via Let's Encrypt.
 
 ### Dependencies
 
