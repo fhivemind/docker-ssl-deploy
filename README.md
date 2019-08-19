@@ -1,8 +1,8 @@
 # dockit
 
-Handles deployment and certification of docker containerized app.
+Handles docker service deployment and certification.
 
-## Description
+### Description
 
 ![Alt text](diagram.png)
 Exposes docker services using nginx, autoprovisioning the SSL via Let's Encrypt.
@@ -32,4 +32,4 @@ Note: Your service must be running inside the same network as the nginx, with ex
 ### Executing program
 
 * update *service.yaml*
-* run main.py
+* run *main.py*
