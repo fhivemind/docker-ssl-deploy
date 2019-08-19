@@ -2,7 +2,7 @@ server {
     listen 80;
     server_name APP_HOST www.APP_HOST;
 
-    location / {
+    location SERVICE_PATH {
         return 301 https://$host$request_uri;
     }    
 
@@ -33,7 +33,7 @@ server {
     include /etc/letsencrypt/options-ssl-nginx.conf;
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
-    location / {
+    location SERVICE_PATH {
         proxy_pass http://APP_SERVICE:APP_PORT;
     }
 
