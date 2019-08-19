@@ -5,17 +5,19 @@ service:
     port: 2030
     host: example.com
     email: user-mail@mail.com
-    staging: true
+    production: true
+    path: /
     domains: 
       - example.com
       - www.example.com
   # ----
   - name: example-service-2
     port: 9887
-    host: secundary-example.com
+    host: secondary-example.com
     email: user-mail23@mail.com
-    staging: false
+    production: false
+    path: /
     domains: 
-      - secundary-example.com
-      - www.secundary-example.com
-      - www.sub.secundary-example.com
+      - secondary-example.com
+      - www.secondary-example.com
+      - www.sub.secondary-example.com

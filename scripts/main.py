@@ -15,7 +15,7 @@ def do_work():
     # run script
     for service in data["service"]:
         services = "\"" + ' '.join(service["domains"]) + "\""
-        stg = "--staging" if service["staging"] == True else ""
+        stg = "--staging" if service["production"] == False else ""
         
         # deploy service
         p = subprocess.Popen([
@@ -24,6 +24,7 @@ def do_work():
             '-p', str(service["port"]), 
             '-s', service["name"], 
             '-e', service["email"], 
+            '--path', service["path"],
             stg, 
             '-d', services
         ])
