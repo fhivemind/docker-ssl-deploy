@@ -1,6 +1,6 @@
 # dockit
 
-Handles docker service deployment and certification.
+Handles docker service deployment and certification for an Nginx app.
 
 ### Description
 
@@ -10,7 +10,8 @@ Exposes docker services using nginx, auto provisioning the SSL via Let's Encrypt
 ### Dependencies
 
 * python3
-* docker and docker-compose cli
+* docker
+* docker-compose
 
 ### Configuration
 Append your service to *services.yaml* as
@@ -29,7 +30,9 @@ Append your service to *services.yaml* as
 ```
 Note: Your service must be running inside the same network as the nginx, with exposed SERVICE_PORT to the network.
 
-### Executing program
+### Execution
 
-* update *service.yaml*
-* run *main.py*
+```bash
+# nano *service.yaml*
+./main.py
+```
